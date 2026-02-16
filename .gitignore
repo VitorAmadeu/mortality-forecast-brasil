@@ -1,0 +1,177 @@
+# =====================================================
+# AMBIENTES VIRTUAIS PYTHON
+# =====================================================
+venv/
+env/
+ENV/
+.venv/
+virtualenv/
+
+# =====================================================
+# PYTHON
+# =====================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# =====================================================
+# JUPYTER NOTEBOOK
+# =====================================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+*.ipynb_checkpoints
+
+# =====================================================
+# DADOS GRANDES (NÃO VERSIONAR)
+# =====================================================
+
+# Dados brutos (geralmente muito grandes)
+Data/raw/*.csv
+Data/raw/*.xlsx
+Data/raw/*.xls
+Data/raw/*.json
+Data/raw/*.parquet
+
+# Dados processados grandes (manter apenas os essenciais)
+Data/processed/dataset_*.csv
+Data/processed/*_analise_descritiva.csv
+Data/processed/*.xlsx
+
+# ✅ EXCEÇÕES: Manter arquivos pequenos necessários
+!Data/processed/serie_temporal_mensal.csv
+!Data/processed/previsao_*.csv
+!Data/processed/metricas_modelos.csv
+
+# Manter estrutura de pastas
+!Data/raw/.gitkeep
+!Data/processed/.gitkeep
+!Data/raw/README.md
+!Data/processed/README.md
+
+# =====================================================
+# MODELOS TREINADOS (GERALMENTE GRANDES)
+# =====================================================
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+models/
+checkpoints/
+saved_models/
+
+# =====================================================
+# IDES E EDITORES
+# =====================================================
+
+# VSCode
+.vscode/
+.history/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# =====================================================
+# SISTEMA OPERACIONAL
+# =====================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# =====================================================
+# VARIÁVEIS DE AMBIENTE E CONFIGURAÇÕES SENSÍVEIS
+# =====================================================
+.env
+.env.local
+.env.*.local
+*.env
+config.local.py
+secrets.json
+
+# =====================================================
+# LOGS E BANCOS DE DADOS TEMPORÁRIOS
+# =====================================================
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# =====================================================
+# ARQUIVOS DE TESTE E TEMPORÁRIOS
+# =====================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# =====================================================
+# OUTROS
+# =====================================================
+*.bak
+*.tmp
+*.temp
+.Rhistory

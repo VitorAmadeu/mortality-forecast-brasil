@@ -8,6 +8,8 @@ Este módulo centraliza:
 - Métricas de avaliação
 
 Projeto estruturado para uso acadêmico e produção.
+
+Autor: Vitor Hugo Amadeu da Silva
 """
 
 __version__ = "1.0.0"
@@ -22,7 +24,7 @@ from .data_loader import (
     carregar_serie,
     carregar_previsao,
     carregar_metricas,
-    listar_arquivos_processados
+    listar_arquivos_processados,
 )
 
 
@@ -31,12 +33,9 @@ from .data_loader import (
 # ==========================
 
 from .preprocessing import (
-    validar_serie,
-    tratar_nulos,
     normalizar_serie,
     criar_sequencias,
-    split_temporal,
-    preparar_dados_lstm  # ✅ ADICIONADO
+    preparar_dados_lstm,   # função que main.py importa
 )
 
 
@@ -45,11 +44,11 @@ from .preprocessing import (
 # ==========================
 
 from .forecasting import (
-    modelo_sarima,        # ✅ ADICIONADO
-    modelo_holt_winters,
-    construir_lstm,       # ✅ ADICIONADO
-    treinar_lstm,         # ✅ ADICIONADO
-    prever_lstm          # ✅ ADICIONADO
+    modelo_sarima,         # retorna (forecast, fit)
+    modelo_holt_winters,   # retorna (forecast, fit)
+    construir_lstm,
+    treinar_lstm,
+    prever_lstm,
 )
 
 
@@ -58,15 +57,13 @@ from .forecasting import (
 # ==========================
 
 from .metrics import (
-    calcular_mse,
-    calcular_rmse,
-    calcular_mae,
-    calcular_mape,
-    calcular_r2,
     avaliar_modelo,
-    gerar_df_metricas,    # ✅ ADICIONADO
-    consolidar_metricas,  # ✅ ADICIONADO
-    salvar_metricas       # ✅ ADICIONADO
+    avaliar_modelo_classico,
+    calcular_mape,
+    calcular_aic_bic,
+    gerar_df_metricas,
+    consolidar_metricas,
+    salvar_metricas,
 )
 
 
@@ -75,35 +72,27 @@ from .metrics import (
 # ==========================
 
 __all__ = [
-    # Data Loader
+    # data_loader
     "carregar_serie",
     "carregar_previsao",
     "carregar_metricas",
     "listar_arquivos_processados",
-    
-    # Preprocessing
-    "validar_serie",
-    "tratar_nulos",
+    # preprocessing
     "normalizar_serie",
     "criar_sequencias",
-    "split_temporal",
     "preparar_dados_lstm",
-    
-    # Forecasting
+    # forecasting
     "modelo_sarima",
     "modelo_holt_winters",
     "construir_lstm",
     "treinar_lstm",
     "prever_lstm",
-    
-    # Metrics
-    "calcular_mse",
-    "calcular_rmse",
-    "calcular_mae",
-    "calcular_mape",
-    "calcular_r2",
+    # metrics
     "avaliar_modelo",
+    "avaliar_modelo_classico",
+    "calcular_mape",
+    "calcular_aic_bic",
     "gerar_df_metricas",
     "consolidar_metricas",
-    "salvar_metricas"
+    "salvar_metricas",
 ]
